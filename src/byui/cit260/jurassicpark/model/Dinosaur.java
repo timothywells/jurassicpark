@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.jurassikpark.model;
+package byui.cit260.jurassicpark.model;
 
 /**
  *
  * @author christian
  */
-public class Map {
+public class Dinosaur {
     
 }
