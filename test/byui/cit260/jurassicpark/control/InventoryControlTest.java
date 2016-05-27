@@ -31,7 +31,15 @@ public class InventoryControlTest {
         double expResult = 0;
         double result = instance.calcTorchNeeded(lighter, cloth, stick, fuel);
         assertEquals(expResult, result, 0.01);
-        
+      
+        lighter = 0.0;
+        cloth = 2.0;
+        stick = 5.0;
+        fuel = 10.0;      
+        expResult = 0;
+        result = instance.calcTorchNeeded(lighter, cloth, stick, fuel);
+        assertEquals(expResult, result, 0.01); 
+            
     }
     
 }
