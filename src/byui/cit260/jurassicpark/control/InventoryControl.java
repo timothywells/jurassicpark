@@ -11,4 +11,14 @@ package byui.cit260.jurassicpark.control;
  */
 public class InventoryControl {
     
+    public double calcTorchNeeded(double lighter, double cloth, double stick, double fuel){
+        
+        if (lighter <= 0 || cloth <= 0 || stick <= 0 || fuel <= 0){
+            return -1;
+        }
+        
+        double torch = (lighter + cloth + stick + fuel)/4;
+        return torch;
+        
+    }
 }
