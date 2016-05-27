@@ -23,15 +23,15 @@ public class InventoryControlTest {
     @Test
     public void testCalcTorchNeeded() {
         System.out.println("calcTorchNeeded");
-        double lighter = 2.0;
+        double lighter = 0.0;
         double cloth = 2.0;
-        double stick = 2.0;
-        double fuel = 2.0;
+        double stick = 5.0;
+        double fuel = 10.0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 2;
+        double expResult = 0;
         double result = instance.calcTorchNeeded(lighter, cloth, stick, fuel);
         assertEquals(expResult, result, 0.01);
-       
+        
     }
     
 }
