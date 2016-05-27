@@ -13,7 +13,7 @@ public class InventoryControl {
     
     public double calcTorchNeeded(double lighter, double cloth, double stick, double fuel){
         
-        if (0 == lighter || 0 == cloth || 0 == stick || 0 == fuel){
+        if (lighter <= 0 || cloth <= 0 || stick <= 0 || fuel <= 0){
             return -1;
         }
         
