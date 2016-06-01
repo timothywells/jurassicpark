@@ -21,4 +21,21 @@ public class InventoryControl {
         return torch;
         
     }
+    
+    public int calcTorchesBuildable(int lighter, int cloth, int stick, int fuel) {
+        
+        if (lighter <= 0 || cloth <= 0 || stick <= 0 || fuel <= 0){
+            return 0;
+        }
+        
+        //takes 1 lighter
+        //takes 1 cloth
+        //takes 1 stick
+        //takes 1 fuel
+        if(lighter <= cloth && lighter <= stick && lighter <= fuel) {
+            return lighter;
+        }
+        //TODO more of the if above for each item type
+        return 0;
+    }
 }
