@@ -15,7 +15,7 @@ public class GameControl {
 
     public static Player createPlayer(String playersName) {
         System.out.println("\n*** createPlayer() function called ***");
-        return new Player();
-    }
     
+        return new Player();
+    }    
 }
