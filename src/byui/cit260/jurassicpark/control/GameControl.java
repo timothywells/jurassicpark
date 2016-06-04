@@ -5,10 +5,17 @@
  */
 package byui.cit260.jurassicpark.control;
 
+import byui.cit260.jurassicpark.model.Player;
+
 /**
  *
  * @author Matthew
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        System.out.println("\n*** createPlayer() function called ***");
+        return new Player();
+    }
     
 }
