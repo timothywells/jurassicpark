@@ -38,6 +38,8 @@ public class MainMenuView {
             String input = getInput();
             selection = input.charAt(0);
             
+            doAction(selection);
+            
         } while (selection != 'Q');
     }
     
@@ -74,7 +76,7 @@ public class MainMenuView {
             input = input.trim();
             
             if(input == null || input.length() == 0) {
-                System.err.println("Invalid input - please enter a valid character");
+                System.out.println("Invalid input - please enter a valid character");
             } else {
                 isValid = true;
             }
@@ -85,7 +87,7 @@ public class MainMenuView {
 
     private void startNewGame() {
         ProgramController.createNewGame(JurassicPark.getPlayer());
-        System.out.println("CALLED START NEW GAME - NIY"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("CALLED START NEW GAME - NIY"); 
     }
 
     private void loadSavedGame() {
@@ -96,7 +98,8 @@ public class MainMenuView {
          System.out.println("CALLED START NEW GAME - NIY");
     }
     private void helpMenu() {
-         System.out.println("CALLED START NEW GAME - NIY");
+         HelpMenuView helpMenu = new HelpMenuView();
+         helpMenu.displayMenu();
     }
 }
 
