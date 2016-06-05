@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.jurassicPark.view;
+package byui.cit260.jurassicpark.view;
 
-import byui.cit260.jurassicPark.control.GameControl;
-import byui.cit260.jurassicPark.model.Player;
+import byui.cit260.jurassicpark.control.ProgramController;
+import byui.cit260.jurassicpark.model.Player;
 import java.util.Scanner;
+import jurassicpark.JurassicPark;
+
 
 /**
  *
@@ -15,87 +17,67 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     
-    private String promptMessage;
-    
-    public StartProgramView(){
+    public StartProgramView() {
         
-        this.promptMessage = "\nPlease Enter Your Name: ";
-        
-        this.displayBanner();
-      
     }
     
-/*  private void displayBanner(){
-        throw new UnsupportedOperationException("Not Supported Yet!");
+    public void startProgram() {
+        
+        displayBanner();
+       
+        String playerName = getPlayerName();
+        
+        Player player = ProgramController.createPlayer(playerName);
+        
+        JurassicPark.setPlayer(player);
+        
+        displayWelcomeMessage(player.getName());
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
-*/
+    
+    public String getPlayerName() {
+        
+        boolean isValidName = false;
+        String name = "";
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Please enter your name: ");
+        
+        while(!isValidName) {
+            String input = keyboard.nextLine();
+            
+            if(input == null || input.length() >= 2) {
+                isValidName = true;
+                name = input;
+            } else {
+                System.out.println("Input is valid - name must be at least 2 characters");
+            }
+        }
+        
+        return name;
+    }
     public void displayBanner() {
         
-        System.out.println(
-         "\n--------------------------------------------"
-        +"\n-                                          -"
-        +"\n- The Banner for This Class Jurassic Park. -"
-        +"\n-                                          -"
-        +"\n--------------------------------------------"
-        );
-    }
-
-    public void displayStartProgramView() {
-       
-        boolean done = false;
-        do{
-            String playersName = this.getPlayersName();
-            if(playersName.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(playersName);
-                       
-        }while (!done);
-    }
-
-    private String getPlayersName() {
+        String welcome = "";
+        welcome = "\n--------------------------------------------" +
+        "\n-                                          -" +
+        "\n- The Banner for This Class Jurassic Park. -" +
+        "\n-                                          -" +
+        "\n--------------------------------------------";
         
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if(value.length() < 1){
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
+        System.out.println(welcome);
     }
     
-    private boolean doAction(String playersName) {
-        
-        if (playersName.length() < 2){
-            System.out.println("nInvlaid Players Name: " 
-                    + "The man name must be greater than one character in length");
-            return false;
-        }
-        
-      /*  Player player = GameControl.createPlayer(playersName);
-        
-        if ( player == null){
-            System.out.println("\nError creating the player.");            
-            return false;
-        
-        this.displayNextView(player);*/
-        
-        }
-        
-}   
-        }
-private void displayNextView(Player player) {
-        System.out.println("\n*** displayNextView() called ***");
-}   
-
-     //To change body of generated methods, choose Tools | Templates.
+    public void displayWelcomeMessage(String playerName) {
+        System.out.println("======================");
+        System.out.println("Welcome" + playerName + ".");
+        System.out.println("Enjoy the game!");
+        System.out.println("======================");
+        boolean welcome = false;
+    
+        System.out.println(welcome);
+    }
+    
+}

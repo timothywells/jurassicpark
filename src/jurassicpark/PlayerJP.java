@@ -1,4 +1,4 @@
-package jurasssicpark;
+package jurassicpark;
 
 import java.io.Serializable;
 import java.util.Objects;
