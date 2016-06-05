@@ -31,7 +31,7 @@ public class StartProgramView {
         
         JurassicPark.setPlayer(player);
         
-        displayWelcomeMessage(player.getName());
+        displayWelcomeMessage (player.getName());
         
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.displayMenu();
@@ -40,7 +40,7 @@ public class StartProgramView {
     public String getPlayerName() {
         
         boolean isValidName = false;
-        String name = "";
+        String name = " ";
         Scanner keyboard = new Scanner(System.in);
         
         System.out.println("Please enter your name: ");
@@ -72,7 +72,7 @@ public class StartProgramView {
     
     public void displayWelcomeMessage(String playerName) {
         System.out.println("======================");
-        System.out.println("Welcome" + playerName + ".");
+        System.out.println("Welcome " + playerName + ".");
         System.out.println("Enjoy the game!");
         System.out.println("======================");
         boolean welcome = false;
