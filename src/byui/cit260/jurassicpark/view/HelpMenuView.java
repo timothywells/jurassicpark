@@ -13,12 +13,13 @@ import java.util.Scanner;
  * @author Matthew
  */
 public class HelpMenuView {
+    
     private final String menu = "\n"
-            + "A - About Game"
-            + "I - Instructions"
-            + "P - Purpose of Game"
-            + "D - Dinosaurs"
-            + "Q - Quit"
+            + "\nA - About Game"
+            + "\nI - Instructions"
+            + "\nP - Purpose of Game"
+            + "\nD - Dinosaurs"
+            + "\nQ - Quit"
             ;
     
     public HelpMenuView(){

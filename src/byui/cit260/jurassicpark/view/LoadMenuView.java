@@ -6,7 +6,6 @@
 package byui.cit260.jurassicpark.view;
 
 import byui.cit260.jurassicpark.control.ProgramController;
-import static java.sql.DriverManager.println;
 import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
@@ -14,17 +13,16 @@ import jurassicpark.JurassicPark;
  *
  * @author Matthew
  */
-public class MainMenuView {
+public class LoadMenuView {
     
     private final String menu = "\n"
-            + "\nN - Start new game"
-            + "\nL - Load saved game"
-            + "\nS - Save current game"
-            + "\nH - Help menu"
+            + "\n1 - Saved Game 1"
+            + "\n2 - Saved Game 2"
+            + "\n3 - Saved Game 3"
             + "\nQ - Quit"
             ;
 
-    public MainMenuView(){
+    public LoadMenuView(){
         
     }
     
@@ -46,17 +44,14 @@ public class MainMenuView {
     public void doAction(char selection) {
         
         switch(selection) {
-            case 'N':
-                startNewGame();
+            case '1':
+                savedGame1();
                 break;
-            case 'L':
-                loadSavedGame();
+            case '2':
+                savedGame2();
                 break;
-            case 'S':
-                saveCurrentGame();
-                break;
-            case 'H':
-                helpMenu();
+            case '3':
+                savedGame3();
                 break;
             case 'Q':
                 break;
@@ -85,24 +80,27 @@ public class MainMenuView {
         return input.toUpperCase();
     }
 
-    private void startNewGame() {
-        NewGameMainView startNewGame = new NewGameMainView();
-        startNewGame.displayMenu();
+    private void describeGame() {
+        
+        String GameDescription = "";
+        GameDescription = "\n--------------------------------------------" +
+        "\n-      Continue on in your adventure.      -" +
+        "\n--------------------------------------------";
+        
+        System.out.println("Saved Game Menu");
         
     }
 
-    private void loadSavedGame() {
-         LoadMenuView loadSavedGame = new LoadMenuView();
-         loadSavedGame.displayMenu();
+    private void savedGame1() {
+         System.out.println("Load Game");
     }
-
-    private void saveCurrentGame() {
-         System.out.println("CALLED START NEW GAME - NIY");
+    private void savedGame2() {
+         System.out.println("Load Game");
     }
-    private void helpMenu() {
-         HelpMenuView helpMenu = new HelpMenuView();
-         helpMenu.displayMenu();
+    private void savedGame3() {
+         System.out.println("Load Game");
     }
 }
 
     
+

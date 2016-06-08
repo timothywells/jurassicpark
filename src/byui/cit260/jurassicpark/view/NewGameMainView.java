@@ -6,7 +6,6 @@
 package byui.cit260.jurassicpark.view;
 
 import byui.cit260.jurassicpark.control.ProgramController;
-import static java.sql.DriverManager.println;
 import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
@@ -14,17 +13,17 @@ import jurassicpark.JurassicPark;
  *
  * @author Matthew
  */
-public class MainMenuView {
+public class NewGameMainView {
     
     private final String menu = "\n"
-            + "\nN - Start new game"
-            + "\nL - Load saved game"
-            + "\nS - Save current game"
-            + "\nH - Help menu"
+            + "\nD - Describe the Game"
+            + "\nP - Describe the Player"
+            + "\nR - Describe the Raptor"
+            + "\nT - Describe the T-Rex"
             + "\nQ - Quit"
             ;
 
-    public MainMenuView(){
+    public NewGameMainView(){
         
     }
     
@@ -46,17 +45,17 @@ public class MainMenuView {
     public void doAction(char selection) {
         
         switch(selection) {
-            case 'N':
-                startNewGame();
+            case 'D':
+                describeGame();
                 break;
-            case 'L':
-                loadSavedGame();
+            case 'P':
+                describePlayer();
                 break;
-            case 'S':
-                saveCurrentGame();
+            case 'R':
+                describeRaptor();
                 break;
-            case 'H':
-                helpMenu();
+            case 'T':
+                describeTrex();
                 break;
             case 'Q':
                 break;
@@ -85,24 +84,35 @@ public class MainMenuView {
         return input.toUpperCase();
     }
 
-    private void startNewGame() {
-        NewGameMainView startNewGame = new NewGameMainView();
-        startNewGame.displayMenu();
+    private void describeGame() {
+        
+        String GameDescription = "";
+        GameDescription = "\n--------------------------------------------" +
+        "\n- You are a guest at a new park featuring  -" +
+        "\n- dinosaurs. But something happened and    -" +
+        "\n- now there are hungry carnivore out and   -" +
+        "\n- very hungry!                             -" +
+        "\n--------------------------------------------";
+        
+        System.out.println("GameDescription");
         
     }
 
-    private void loadSavedGame() {
-         LoadMenuView loadSavedGame = new LoadMenuView();
-         loadSavedGame.displayMenu();
-    }
-
-    private void saveCurrentGame() {
+    private void describePlayer() {
          System.out.println("CALLED START NEW GAME - NIY");
     }
-    private void helpMenu() {
-         HelpMenuView helpMenu = new HelpMenuView();
-         helpMenu.displayMenu();
+
+    private void describeRaptop() {
+         System.out.println("CALLED START NEW GAME - NIY");
+    }
+    private void describeTrex() {
+         System.out.println();
+    }
+
+    private void describeRaptor() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }
 
     
+
