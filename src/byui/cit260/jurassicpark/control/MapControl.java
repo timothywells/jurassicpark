@@ -11,7 +11,13 @@ package byui.cit260.jurassicpark.control;
  */
 public class MapControl {
     public double calcResistance (double voltage, double amps){
-        return voltage/amps;
+        
+         if ((voltage < 110 || voltage > 110) && (amps < 20 || amps > 20)){
+            return 0;
+         }
+         
+         double resistance = voltage / amps;
+         return resistance;
         
     }
 }
