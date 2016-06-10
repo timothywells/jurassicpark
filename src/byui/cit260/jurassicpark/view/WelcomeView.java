@@ -10,21 +10,18 @@ import byui.cit260.jurassicpark.model.Player;
 import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
-
 /**
- *
  * @author Tim
  */
 public class WelcomeView {
     
-    public WelcomeView() {
-        
+    public WelcomeView() {    
     }
     
     public void welcome() {
         
         displayBanner();
-       
+        
         String playerName = getPlayerName();
         
         Player player = ProgramController.createPlayer(playerName);
@@ -34,6 +31,7 @@ public class WelcomeView {
         displayWelcomeMessage (player.getName());
         
         MainMenuView mainMenu = new MainMenuView();
+        
         mainMenu.displayMenu();
     }
     
