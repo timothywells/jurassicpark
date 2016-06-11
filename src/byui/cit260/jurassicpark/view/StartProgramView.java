@@ -52,7 +52,7 @@ public class StartProgramView {
                 isValidName = true;
                 name = input;
             } else {
-                System.out.println("Input is valid - name must be at least 2 characters");
+                System.out.println("Input is invalid - name must be at least 2 characters");
             }
         }
         
