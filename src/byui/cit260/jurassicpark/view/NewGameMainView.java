@@ -85,16 +85,12 @@ public class NewGameMainView {
     }
 
     private void describeGame() {
-        
-        String GameDescription = "";
-        GameDescription = "\n--------------------------------------------" +
+        System.out.println("\n--------------------------------------------" +
         "\n- You are a guest at a new park featuring  -" +
         "\n- dinosaurs. But something happened and    -" +
         "\n- now there are hungry carnivore out and   -" +
         "\n- very hungry!                             -" +
-        "\n--------------------------------------------";
-        
-        System.out.println("GameDescription");
+        "\n--------------------------------------------");
         
     }
 
