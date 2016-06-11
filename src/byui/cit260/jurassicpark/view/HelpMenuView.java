@@ -19,7 +19,7 @@ public class HelpMenuView {
             + "\nI - Instructions"
             + "\nP - Purpose of Game"
             + "\nD - Dinosaurs"
-            + "\nQ - Quit"
+            + "\nM - Main Menu"
             ;
     
     public HelpMenuView(){
@@ -36,7 +36,7 @@ public class HelpMenuView {
             String input = getInput();
             selection = input.charAt(0);
             
-        } while (selection != 'Q');
+        } while (selection != 'M');
     }
     
     public void doAction(char selection) {
@@ -54,7 +54,7 @@ public class HelpMenuView {
             case 'D':
                 dinosaurs();
                 break;
-            case 'Q':
+            case 'M':
                 break;
             default:
                 System.out.println("Invalid Option");
