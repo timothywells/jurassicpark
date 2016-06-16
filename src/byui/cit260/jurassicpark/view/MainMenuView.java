@@ -14,38 +14,26 @@ import jurassicpark.JurassicPark;
  *
  * @author Matthew
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private final String menu = "\n"
+    public MainMenuView() {
+        super("\n"
+            +"\n-------------------------"
+            +"\n|   Main Menu           |" 
+            +"\n-------------------------"
             + "\nN - Start new game"
             + "\nL - Load saved game"
             + "\nS - Save current game"
             + "\nH - Help menu"
-            + "\nQ - Quit"
-            ;
-
-    public MainMenuView(){
-        
+            + "\nQ - Quit");
     }
     
-    public void displayMenu(){
+    @Override
+    public boolean doAction(String value) {
         
-        char selection = ' ';
+        char charSel =value.toUpperCase().charAt(0);
         
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while (selection != 'Q');
-    }
-    
-    public void doAction(char selection) {
-        
-        switch(selection) {
+        switch(charSel) {
             case 'N':
                 startNewGame();
                 break;
@@ -64,25 +52,8 @@ public class MainMenuView {
                 System.out.println("Invalid Option");
                 break;
         }
-    }
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid) {
-            System.out.println("Please select an option: ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0) {
-                System.out.println("Invalid input - please enter a valid character");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
+        return false;
+
     }
 
     private void startNewGame() {
