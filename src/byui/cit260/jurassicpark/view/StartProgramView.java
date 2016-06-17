@@ -34,7 +34,7 @@ public class StartProgramView {
         displayWelcomeMessage (player.getName());
         
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
     }
     
     public String getPlayerName() {
