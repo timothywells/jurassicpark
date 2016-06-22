@@ -32,7 +32,7 @@ public class WelcomeView {
         
         MainMenuView mainMenu = new MainMenuView();
         
-        mainMenu.displayMenu();
+        mainMenu.display();
     }
     
     public String getPlayerName() {

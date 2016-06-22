@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.jurassicpark.model;
+package byui.cit260.jurassicpark.view;
 
 /**
  *
  * @author christian
  */
-public class Weapons {
+public interface ViewInterface {
+    
+    public void display();
+    public String getInput();
+    public boolean doAction(String value);
     
 }

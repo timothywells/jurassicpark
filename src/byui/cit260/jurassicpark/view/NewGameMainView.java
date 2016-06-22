@@ -20,6 +20,7 @@ public class NewGameMainView {
             + "\nP - Describe the Player"
             + "\nR - Describe the Raptor"
             + "\nT - Describe the T-Rex"
+            + "\nC - Play the Game"
             + "\nQ - Quit"
             ;
 
@@ -56,6 +57,8 @@ public class NewGameMainView {
                 break;
             case 'T':
                 describeTrex();
+            case 'C':
+                playGame();
                 break;
             case 'Q':
                 break;
@@ -85,16 +88,12 @@ public class NewGameMainView {
     }
 
     private void describeGame() {
-        
-        String GameDescription = "";
-        GameDescription = "\n--------------------------------------------" +
+        System.out.println("\n--------------------------------------------" +
         "\n- You are a guest at a new park featuring  -" +
         "\n- dinosaurs. But something happened and    -" +
         "\n- now there are hungry carnivore out and   -" +
         "\n- very hungry!                             -" +
-        "\n--------------------------------------------";
-        
-        System.out.println("GameDescription");
+        "\n--------------------------------------------");
         
     }
 
@@ -108,7 +107,9 @@ public class NewGameMainView {
     private void describeTrex() {
          System.out.println();
     }
-
+    private void playGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private void describeRaptor() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
