@@ -7,12 +7,8 @@ package byui.cit260.jurassicpark.view;
 
 /**
  *
- * @author Matthew
+ * @author zerto
  */
-class GameMenuView {
-
-    void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public class PowerBreakerView {
     
 }

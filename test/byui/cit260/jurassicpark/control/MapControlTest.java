@@ -18,14 +18,14 @@ public class MapControlTest {
     }
 
     /**
-     * Test of calcResistance method, of class MapControl.
+     * Test of calcResistance method, of class PowerBreakerControl.
      */
     @Test
     public void testCalcResistance() {
         System.out.println("calcResistance");
         double volts = 110.0;
         double amps = 20.0;
-        MapControl instance = new MapControl();
+        PowerBreakerControl instance = new PowerBreakerControl();
         double expResult = 5.5;
         double result = instance.calcResistance(volts, amps);
         assertEquals(expResult, result, 0.0);

@@ -57,7 +57,7 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        NewGameMainView startNewGame = new NewGameMainView();
+        GameMainView startNewGame = new GameMainView();
         startNewGame.displayMenu();
         
     }

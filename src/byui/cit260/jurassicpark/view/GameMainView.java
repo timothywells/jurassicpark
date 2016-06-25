@@ -10,10 +10,10 @@ import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
 /**
- *
+ * This File needs to be redone. This is the in game menu not the main menu.
  * @author Matthew
  */
-public class NewGameMainView {
+public class GameMainView {
     
     private final String menu = "\n"
             + "\nD - Describe the Game"
@@ -24,7 +24,7 @@ public class NewGameMainView {
             + "\nQ - Quit"
             ;
 
-    public NewGameMainView(){
+    public GameMainView(){
         
     }
     

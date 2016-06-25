@@ -9,7 +9,7 @@ package byui.cit260.jurassicpark.control;
  *
  * @author Matthew
  */
-public class MapControl {
+public class PowerBreakerControl {
     public double calcResistance (double voltage, double amps){
         
          if ((voltage < 110 || voltage > 110) && (amps < 20 || amps > 20)){
