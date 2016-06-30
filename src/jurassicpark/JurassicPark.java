@@ -6,33 +6,21 @@
 package jurassicpark;
 
 import byui.cit260.jurassicpark.model.Game;
+import byui.cit260.jurassicpark.model.Location;
 import byui.cit260.jurassicpark.model.Player;
 import byui.cit260.jurassicpark.view.StartProgramView;
 
 /**
  *
- * @author zerto
+ * @author christian
  */
 public class JurassicPark {
     
     private static Player player;
-
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        JurassicPark.player = player;
-    }
-
-    public static Game getGame() {
-        return game;
-    }
-
-    public static void setGame(Game game) {
-        JurassicPark.game = game;
-    }
     private static Game game;
+    private static Location location;
+
+  
 
     /**
      * @param args the command line arguments
@@ -44,4 +32,26 @@ public class JurassicPark {
         startProgram.startProgram();
     }
     
+     public static Player getPlayer() {
+        return player;
+    }
+     
+     public static void setPlayer(Player player) {
+        JurassicPark.player = player;
+    }
+     
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game game) {
+        JurassicPark.game = game;
+    }
+   public static Location getLocation() {
+        return location;
+    }
+
+    public static void setLocation(Location location) {
+        JurassicPark.location = location;
+    }
 }
