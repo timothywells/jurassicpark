@@ -7,7 +7,7 @@ package byui.cit260.jurassicpark.model;
 
 /**
  *
- * @author zerto
+ * @author Tim
  */
 public class PowerBreaker {
     
