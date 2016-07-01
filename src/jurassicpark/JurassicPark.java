@@ -9,6 +9,7 @@ import byui.cit260.jurassicpark.model.Game;
 import byui.cit260.jurassicpark.model.Location;
 import byui.cit260.jurassicpark.model.Player;
 import byui.cit260.jurassicpark.view.StartProgramView;
+import java.io.PrintWriter;
 
 /**
  *
@@ -53,5 +54,13 @@ public class JurassicPark {
 
     public static void setLocation(Location location) {
         JurassicPark.location = location;
+    }
+
+    public static PrintWriter getLogFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static PrintWriter getOutFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
