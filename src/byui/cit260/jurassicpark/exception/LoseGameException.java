@@ -9,6 +9,26 @@ package byui.cit260.jurassicpark.exception;
  *
  * @author Tim
  */
-public class LoseGameException {
+
+public class LoseGameException extends RuntimeException {
+    
+    public LoseGameException() {
+    }
+
+    public LoseGameException(String message) {
+        super(message);
+    }
+
+    public LoseGameException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public LoseGameException(Throwable cause) {
+        super(cause);
+    }
+
+    public LoseGameException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }
