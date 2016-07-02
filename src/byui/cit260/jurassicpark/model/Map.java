@@ -14,8 +14,8 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
     
-    private static final int NUM_ROWS = 5;
-    private static final int NUM_COLS = 10;
+    public static final int NUM_ROWS = 5;
+    public static final int NUM_COLS = 10;
     
     private Location[][] matrix;
     
@@ -45,7 +45,7 @@ public class Map implements Serializable {
         
         for (int row = 0; row < NUM_ROWS; row++){
             for (int col = 0; col < NUM_COLS; col++) {
-                    rtn += matrix[row][col].getType().name.charAt(0) + "\t";
+                    rtn += matrix[row][col].getType().name().charAt(0) + "\t";
                 }
                 rtn += "\t";
             }
