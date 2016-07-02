@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
+    Location location;
     
     public Player(){
     
@@ -53,6 +54,14 @@ public class Player implements Serializable {
     @Override
     public String toString() {
         return "Player{" + "name=" + name + '}';
+    }
+
+    public Location getLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setLocation(Location newLocation) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

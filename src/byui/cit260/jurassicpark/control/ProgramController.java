@@ -6,8 +6,8 @@
 package byui.cit260.jurassicpark.control;
 
 import byui.cit260.jurassicpark.model.Game;
+import byui.cit260.jurassicpark.model.Map;
 import byui.cit260.jurassicpark.model.Player;
-import java.util.Map;
 import jurassicpark.JurassicPark;
 
 /**
@@ -31,10 +31,10 @@ public class ProgramController {
         Game g = new Game();
         g.setPlayer(player);
         
-        Map gameMap = new Map() {};
-        g.setMap (gameMap);
+        Map gameMap = new Map();
+        g.setMap(gameMap);
         
-        player.setLocation(gameMap.getLocation(0, 0);
+        player.setLocation(gameMap.getLocation(0,0));
         
         JurassicPark.setGame(g);
     }
