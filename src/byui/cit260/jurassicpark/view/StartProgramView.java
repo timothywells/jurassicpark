@@ -7,7 +7,8 @@ package byui.cit260.jurassicpark.view;
 
 import byui.cit260.jurassicpark.control.ProgramController;
 import byui.cit260.jurassicpark.model.Player;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import jurassicpark.JurassicPark;
 
 
@@ -16,6 +17,9 @@ import jurassicpark.JurassicPark;
  * @author Matthew
  */
 public class StartProgramView {
+    
+    protected final PrintWriter console = JurassicPark.getOutFile();
+    protected final BufferedReader keyboard = JurassicPark.getInFile();
     
     public StartProgramView() {
         
@@ -40,14 +44,17 @@ public class StartProgramView {
     public String getPlayerName() {
         
         boolean isValidName = false;
-        String name = " ";
-        Scanner keyboard = new Scanner(System.in);
+        String name = "";
         
-        System.out.println("Please enter your name: ");
+        console.println("Please enter your name: ");
         
         while(!isValidName) {
-            String input = keyboard.nextLine();
-            
+            String input = null;
+            try {
+            input = keyboard.readLine();
+            } catch(Exception e) {
+                ErrorView.display(this.getClass().getName(), "Error reading input");
+            }
             if(input == null || input.length() >= 2) {
                 isValidName = true;
                 name = input;
@@ -58,8 +65,7 @@ public class StartProgramView {
         
         return name;
     }
-    public void displayBanner() {
-        
+    public void displayBanner() {        
         String welcome = "";
         welcome = "\n ###########@##########################################################################@##################################################################### " +
 "\n ###########@##########################################################################@###########################################################@######@## " +
@@ -178,10 +184,10 @@ public class StartProgramView {
 "\n ################################################@############################################@############################################################## " +
 "\n #@#####@########################################@#############################@@@#####@###############################################@##################### " +
 "\n #@@#############################################@#############################@@######@#########@############@####@######################################### " +
-"\n ##@#############################################@#############################@@@#####@#########################################@########################### " +
-                "\n ";
+"\n ##@#############################################@#############################@@@#####@#########################################@########################### ";
+      
         
-        System.out.println(welcome);
+        console.println(welcome);
     }
     
     public void displayWelcomeMessage(String playerName) {
@@ -189,9 +195,7 @@ public class StartProgramView {
         System.out.println("Welcome " + playerName + ".");
         System.out.println("Enjoy the game!");
         System.out.println("======================");
-        boolean welcome = false;
     
-        System.out.println(welcome);
     }
     
 }
