@@ -46,7 +46,7 @@ public class StartProgramView {
         boolean isValidName = false;
         String name = " ";
         
-        console.println("Please enter your name: ");
+        System.out.println("Please enter your name: ");
         
         while(!isValidName) {
             String input = null;
@@ -59,7 +59,7 @@ public class StartProgramView {
                 isValidName = true;
                 name = input;
             } else {
-                System.out.println("Input is invalid - name must be at least 2 characters");
+                console.println("Input is invalid - name must be at least 2 characters");
             }
         }
         

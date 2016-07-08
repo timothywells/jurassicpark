@@ -34,12 +34,14 @@ public class JurassicPark {
      */
     public static void main(String[] args) {
         
-        StartProgramView startProgram = new StartProgramView();
+        StartProgramView startProgram = null;
         try {
         inFile = new BufferedReader(new InputStreamReader(System.in));
         outFile = new PrintWriter(System.out, true);
         String logPath = "log.txt";
         logFile = new PrintWriter(logPath);
+        
+        startProgram = new StartProgramView();
         
         startProgram.startProgram();
     } catch (Exception e) {
