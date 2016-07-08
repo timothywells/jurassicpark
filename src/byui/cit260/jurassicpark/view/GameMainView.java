@@ -23,10 +23,10 @@ public class GameMainView extends View {
             +"\n-------------------------"
             +"\n|   Game Menu           |" 
             +"\n-------------------------"
-            + "\nN - Move North"
-            + "\nE - Move East"
+            + "\nW - Move North"
+            + "\nD - Move East"
             + "\nS - Move South"
-            + "\nW - Move West"
+            + "\nA - Move West"
             + "\nL - Location"
             + "\nQ - Quit");
     }
