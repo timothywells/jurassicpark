@@ -5,7 +5,10 @@
  */
 package byui.cit260.jurassicpark.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import jurassicpark.JurassicPark;
 
 /**
  *
@@ -14,6 +17,8 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    protected final PrintWriter console = JurassicPark.getOutFile();
+    protected final BufferedReader keyboard = JurassicPark.getInFile();
     
     public View() {
     }
@@ -37,29 +42,28 @@ public abstract class View implements ViewInterface {
      }
     
      @Override
-     public String getInput() {
+     public String getInput(){
+         String input = " ";
+         boolean validInput = false;
          
-         Scanner keyboard = new Scanner(System.in);
-         boolean valid = false;
-         String value = null;
+         while (!validInput) {
+             System.out.println("\n" + this.displayMessage);
          
-         //while a valid name has not been retrieved
-         while (!valid) {
+             try {
+             input = keyboard.readLine();
+             } catch(Exception e) {
+                 throw new RuntimeException("Error reading input");
+             }
+             input = input.trim();
+             input = input.toUpperCase();
              
-             //prompt for the player's name
-              System.out.println("\n" + this.displayMessage);
-             
-             //get the value entered form the keyboard
-             value = keyboard.nextLine();
-             value = value.trim();
-             
-             if (value.length() < 1) {
-                 System.out.println("\n*** You must enter a value ***");
+             if (input.length() < 1) {
+                 console.println("\nInvalid value: You must enter a character.");
                  continue;
              }
              break;
          }   
-         return value;
+         return input;
      } 
 
 }

@@ -14,20 +14,20 @@ public class MovementException extends Exception {
     public MovementException() {
     }
 
-    public MovementException(String string) {
-        super(string);
+    public MovementException(String message) {
+        super(message);
     }
 
-    public MovementException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public MovementException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public MovementException(Throwable thrwbl) {
-        super(thrwbl);
+    public MovementException(Throwable cause) {
+        super(cause);
     }
 
-    public MovementException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public MovementException(String message, Throwable cause, boolean enableSuppression, boolean bln1) {
+        super(message, cause, enableSuppression, bln1);
     }
 
 
