@@ -35,16 +35,16 @@ public class GameMainView extends View {
         char selection = input.toUpperCase().charAt(0);
         
         switch(selection) {
-            case 'N':
+            case 'W':
                 moveNorth();
                 break;
-            case 'E':
+            case 'D':
                 moveEast();
                 break;
             case 'S':
                 moveSouth();
                 break;
-            case 'W':
+            case 'A':
                 moveWest();
                 break;
             case 'L':
