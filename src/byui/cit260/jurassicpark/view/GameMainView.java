@@ -64,7 +64,7 @@ public class GameMainView extends View {
             MovementController mc = new MovementController();
         try {
             mc.moveNorth(JurassicPark.getGame());
-            console.println("You move North");
+            console.println("You have moved North");
         } catch (MovementException me) {
             console.println("You cannot move there");
         } finally {
@@ -75,19 +75,40 @@ public class GameMainView extends View {
     
     private void moveEast(){
         MovementController mc = new MovementController();
-        mc.moveEast(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved East");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void moveSouth(){
         MovementController mc = new MovementController();
-        mc.moveSouth(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved South");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void moveWest(){
         MovementController mc = new MovementController();
-        mc.moveWest(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved West");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void showLocation(){            
         Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
         System.out.println(
@@ -98,4 +119,3 @@ public class GameMainView extends View {
 }
 
     
-
