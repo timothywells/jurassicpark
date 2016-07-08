@@ -12,8 +12,8 @@ import byui.cit260.jurassicpark.model.Location;
 import jurassicpark.JurassicPark;
 
 /**
- * This File needs to be redone. This is the in game menu not the main menu.
- * @author Matthew
+ * 
+ * @author Tim W
  */
 
 public class GameMainView extends View {
@@ -63,7 +63,7 @@ public class GameMainView extends View {
             MovementController mc = new MovementController();
         try {
             mc.moveNorth(JurassicPark.getGame());
-            console.println("You move North");
+            console.println("You have moved North");
         } catch (MovementException me) {
             console.println("You cannot move there");
         } finally {
@@ -74,54 +74,47 @@ public class GameMainView extends View {
     
     private void moveEast(){
         MovementController mc = new MovementController();
-        mc.moveEast(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved East");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void moveSouth(){
         MovementController mc = new MovementController();
-        mc.moveSouth(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved South");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void moveWest(){
         MovementController mc = new MovementController();
-        mc.moveWest(JurassicPark.getGame());
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You have moved West");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
     }
-    
+    }
     private void showLocation(){            
         Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
         System.out.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
         );
     }
-    
-    
-    private void describeGame() {
-        System.out.println("\n--------------------------------------------" +
-        "\n- You are a guest at a new park featuring  -" +
-        "\n- dinosaurs. But something happened and    -" +
-        "\n- now there are hungry carnivore out and   -" +
-        "\n- very hungry!                             -" +
-        "\n--------------------------------------------");
-        
-    }
-
-    private void describePlayer() {
-         System.out.println("CALLED START NEW GAME - NIY");
-    }
-
-    private void describeRaptop() {
-         System.out.println("CALLED START NEW GAME - NIY");
-    }
-    private void describeTrex() {
-         System.out.println();
-    }
-    private void playGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    private void describeRaptor() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+       
 }
 
     
-
