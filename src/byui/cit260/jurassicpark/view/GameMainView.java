@@ -7,6 +7,7 @@ package byui.cit260.jurassicpark.view;
 
 import byui.cit260.jurassicpark.control.MovementController;
 import byui.cit260.jurassicpark.control.ProgramController;
+import byui.cit260.jurassicpark.exception.MovementException;
 import byui.cit260.jurassicpark.model.Location;
 import java.util.Scanner;
 import jurassicpark.JurassicPark;
@@ -23,10 +24,10 @@ public class GameMainView extends View {
             +"\n-------------------------"
             +"\n|   Game Menu           |" 
             +"\n-------------------------"
-            + "\nW - Move North"
-            + "\nD - Move East"
+            + "\nN - Move North"
+            + "\nE - Move East"
             + "\nS - Move South"
-            + "\nA - Move West"
+            + "\nW - Move West"
             + "\nL - Location"
             + "\nQ - Quit");
     }
@@ -35,16 +36,16 @@ public class GameMainView extends View {
         char selection = input.toUpperCase().charAt(0);
         
         switch(selection) {
-            case 'W':
+            case 'N':
                 moveNorth();
                 break;
-            case 'D':
+            case 'E':
                 moveEast();
                 break;
             case 'S':
                 moveSouth();
                 break;
-            case 'A':
+            case 'W':
                 moveWest();
                 break;
             case 'L':
@@ -60,8 +61,16 @@ public class GameMainView extends View {
     }
     
     private void moveNorth(){
-        MovementController mc = new MovementController();
-        mc.moveNorth(JurassicPark.getGame());
+            MovementController mc = new MovementController();
+        try {
+            mc.moveNorth(JurassicPark.getGame());
+            console.println("You move North");
+        } catch (MovementException me) {
+            console.println("You cannot move there");
+        } finally {
+        //always execute
+            console.println("Finally executes");
+    }
     }
     
     private void moveEast(){
