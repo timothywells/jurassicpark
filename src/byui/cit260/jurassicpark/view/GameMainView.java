@@ -5,7 +5,9 @@
  */
 package byui.cit260.jurassicpark.view;
 
+import byui.cit260.jurassicpark.control.MovementController;
 import byui.cit260.jurassicpark.control.ProgramController;
+import byui.cit260.jurassicpark.model.Location;
 import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
@@ -13,80 +15,78 @@ import jurassicpark.JurassicPark;
  * This File needs to be redone. This is the in game menu not the main menu.
  * @author Matthew
  */
-public class GameMainView {
-    
-    private final String menu = "\n"
-            + "\nD - Describe the Game"
-            + "\nP - Describe the Player"
-            + "\nR - Describe the Raptor"
-            + "\nT - Describe the T-Rex"
-            + "\nC - Play the Game"
-            + "\nQ - Quit"
-            ;
+
+public class GameMainView extends View {
 
     public GameMainView(){
-        
+        super("\n"
+            +"\n-------------------------"
+            +"\n|   Game Menu           |" 
+            +"\n-------------------------"
+            + "\nN - Move North"
+            + "\nE - Move East"
+            + "\nS - Move South"
+            + "\nW - Move West"
+            + "\nL - Location"
+            + "\nQ - Quit");
     }
     
-    public void displayMenu(){
-        
-        char selection = ' ';
-        
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-            doAction(selection);
-            
-        } while (selection != 'Q');
-    }
-    
-    public void doAction(char selection) {
+    public boolean doAction(String input) {
+        char selection = input.toUpperCase().charAt(0);
         
         switch(selection) {
-            case 'D':
-                describeGame();
+            case 'N':
+                moveNorth();
                 break;
-            case 'P':
-                describePlayer();
+            case 'E':
+                moveEast();
                 break;
-            case 'R':
-                describeRaptor();
+            case 'S':
+                moveSouth();
                 break;
-            case 'T':
-                describeTrex();
-            case 'C':
-                playGame();
+            case 'W':
+                moveWest();
+                break;
+            case 'L':
+                showLocation();
                 break;
             case 'Q':
-                break;
+                return true;
             default:
                 System.out.println("Invalid Option");
                 break;
         }
+        return false;
     }
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid) {
-            System.out.println("Please select an option: ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0) {
-                System.out.println("Invalid input - please enter a valid character");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
+    
+    private void moveNorth(){
+        MovementController mc = new MovementController();
+        mc.moveNorth(JurassicPark.getGame());
     }
-
+    
+    private void moveEast(){
+        MovementController mc = new MovementController();
+        mc.moveEast(JurassicPark.getGame());
+    }
+    
+    private void moveSouth(){
+        MovementController mc = new MovementController();
+        mc.moveSouth(JurassicPark.getGame());
+    }
+    
+    private void moveWest(){
+        MovementController mc = new MovementController();
+        mc.moveWest(JurassicPark.getGame());
+    }
+    
+    private void showLocation(){            
+        Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
+        System.out.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
+        );
+    }
+    
+    
     private void describeGame() {
         System.out.println("\n--------------------------------------------" +
         "\n- You are a guest at a new park featuring  -" +

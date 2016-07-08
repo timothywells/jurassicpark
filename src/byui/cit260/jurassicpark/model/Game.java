@@ -5,8 +5,6 @@
  */
 package byui.cit260.jurassicpark.model;
 
-import java.util.Map;
-
 /**
  *
  * @author Matthew
@@ -44,13 +42,6 @@ public class Game {
     public void setPlayer(Player player) {
         this.player = player;
     }
-
-    public void setMap(byui.cit260.jurassicpark.model.Map gameMap) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-
 
     
 }

@@ -54,16 +54,15 @@ public class Player implements Serializable {
     @Override
     public String toString() {
         return "Player{" + "name=" + name + '}';
-    }
+    }   
 
     public Location getLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return location;
     }
 
-    public void setLocation(Location newLocation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setLocation(Location location) {
+        this.location = location;
     }
-    
     
     
 }

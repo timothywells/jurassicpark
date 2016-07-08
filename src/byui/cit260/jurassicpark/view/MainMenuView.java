@@ -57,8 +57,9 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
+        ProgramController.createNewGame(JurassicPark.getPlayer());
         GameMainView startNewGame = new GameMainView();
-        startNewGame.displayMenu();
+        startNewGame.display();
         
     }
 
