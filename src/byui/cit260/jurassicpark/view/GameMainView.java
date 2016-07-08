@@ -27,8 +27,10 @@ public class GameMainView extends View {
             + "\nE - Move East"
             + "\nS - Move South"
             + "\nW - Move West"
-            + "\nL - Location"
-            + "\nQ - Quit");
+            + "\nM - View Map"
+            + "\nQ - Quit"
+            + "\n         "
+            + "\n         ");
     }
     
     public boolean doAction(String input) {
@@ -47,72 +49,64 @@ public class GameMainView extends View {
             case 'W':
                 moveWest();
                 break;
-            case 'L':
-                showLocation();
+            case 'M':
+                viewMap();
                 break;
             case 'Q':
                 return true;
             default:
-                System.out.println("Invalid Option");
+                console.println("Invalid Option");
                 break;
         }
         return false;
     }
     
     private void moveNorth(){
-            MovementController mc = new MovementController();
-        try {
-            mc.moveNorth(JurassicPark.getGame());
-            console.println("You have moved North");
-        } catch (MovementException me) {
-            console.println("You cannot move there");
-        } finally {
-        //always execute
-            console.println("Finally executes");
-    }
+        MovementController mc = new MovementController();
+            if(mc.moveNorth(JurassicPark.getGame()) == false){
+            console.println("You can't move North!");
+        }
+        Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
+        console.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
+        );
     }
     
     private void moveEast(){
         MovementController mc = new MovementController();
-        try {
-            mc.moveNorth(JurassicPark.getGame());
-            console.println("You have moved East");
-        } catch (MovementException me) {
-            console.println("You cannot move there");
-        } finally {
-        //always execute
-            console.println("Finally executes");
-    }
-    }
-    private void moveSouth(){
-        MovementController mc = new MovementController();
-        try {
-            mc.moveNorth(JurassicPark.getGame());
-            console.println("You have moved South");
-        } catch (MovementException me) {
-            console.println("You cannot move there");
-        } finally {
-        //always execute
-            console.println("Finally executes");
-    }
-    }
-    private void moveWest(){
-        MovementController mc = new MovementController();
-        try {
-            mc.moveNorth(JurassicPark.getGame());
-            console.println("You have moved West");
-        } catch (MovementException me) {
-            console.println("You cannot move there");
-        } finally {
-        //always execute
-            console.println("Finally executes");
-    }
-    }
-    private void showLocation(){            
+            if(mc.moveEast(JurassicPark.getGame()) == false){
+            console.println("You can't move East!");
+        }
         Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
-        System.out.println(
+        console.println(
                 "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
         );
+    }
+    
+    private void moveSouth(){
+        MovementController mc = new MovementController();
+            if(mc.moveSouth(JurassicPark.getGame()) == false){
+            console.println("You can't move South!");
+        }
+        Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
+        console.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
+        );
+    }
+    
+    private void moveWest(){
+        MovementController mc = new MovementController();
+            if(mc.moveWest(JurassicPark.getGame()) == false){
+            console.println("You can't move West!");
+        }
+        Location playerLocation = JurassicPark.getGame().getPlayer().getLocation();
+        console.println(
+                "\n Your locations is " + playerLocation.getRow() + ", " + playerLocation.getCol()
+        );
+    }
+    
+    private void viewMap(){            
+        console.println(JurassicPark.getGame().getMap().getMapString());
     }
        
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.jurassicpark.model;
 
+import byui.cit260.jurassicpark.control.Panel;
 import java.io.Serializable;
 
 /**
@@ -15,21 +16,15 @@ public class Location implements Serializable{
     
     private LocationType type;
     private Player player;
+    private Item item;
+    private Dinosaur dinosaur; 
+    private Panel panel;
     private int row;
     private int col;
     
     public Location(){
         
     }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
     public int getRow() {
         return row;
     }
@@ -52,6 +47,37 @@ public class Location implements Serializable{
 
     public void setType(LocationType type) {
         this.type = type;
+    }
+    
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    public Dinosaur getDinosaur() {
+        return dinosaur;
+    }
+
+    public void setDinosaur(Dinosaur dinosaur) {
+        this.dinosaur = dinosaur;
+    }
+    
+    public Panel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(Panel panel) {
+        this.panel = panel;
     }
     
 }

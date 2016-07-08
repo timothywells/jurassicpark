@@ -12,7 +12,9 @@ package byui.cit260.jurassicpark.view;
 public interface ViewInterface {
     
     public void display();
-    public String getInput();
+    
+    public String getInput()throws Exception;
+    
     public boolean doAction(String value);
     
 }

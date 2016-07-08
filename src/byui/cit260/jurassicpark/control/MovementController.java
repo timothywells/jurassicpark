@@ -17,14 +17,14 @@ import byui.cit260.jurassicpark.model.Player;
  */
 public class MovementController {
     
-    public boolean moveNorth(Game game) throws MovementException{
+    public boolean moveNorth(Game game) {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
-        Map map = (Map) game.getMap();
+        Map map = game.getMap();
         
         if(currentLocation.getRow() == 0) {
-            throw new MovementException("You cannot move north");
+            return false;
         }
         
         int currentCol = currentLocation.getCol();
@@ -41,7 +41,7 @@ public class MovementController {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
-        Map map = (Map) game.getMap();
+        Map map = game.getMap();
         
         if(currentLocation.getCol() == Map.NUM_COLS - 1) {
             return false;
@@ -56,7 +56,7 @@ public class MovementController {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
-        Map map = (Map) game.getMap();
+        Map map = game.getMap();
         
         if(currentLocation.getRow() == Map.NUM_ROWS - 1) {
             return false;
@@ -71,7 +71,7 @@ public class MovementController {
         
         Player player = game.getPlayer();
         Location currentLocation = player.getLocation();
-        Map map = (Map) game.getMap();
+        Map map = game.getMap();
         
         if(currentLocation.getCol() == 0) {
             return false;
