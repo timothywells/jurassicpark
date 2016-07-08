@@ -23,10 +23,10 @@ public class GameMainView extends View {
             +"\n-------------------------"
             +"\n|   Game Menu           |" 
             +"\n-------------------------"
-            + "\nW - Move North"
-            + "\nD - Move East"
+            + "\nN - Move North"
+            + "\nE - Move East"
             + "\nS - Move South"
-            + "\nA - Move West"
+            + "\nW - Move West"
             + "\nL - Location"
             + "\nQ - Quit");
     }
@@ -35,16 +35,16 @@ public class GameMainView extends View {
         char selection = input.toUpperCase().charAt(0);
         
         switch(selection) {
-            case 'W':
+            case 'N':
                 moveNorth();
                 break;
-            case 'D':
+            case 'E':
                 moveEast();
                 break;
             case 'S':
                 moveSouth();
                 break;
-            case 'A':
+            case 'W':
                 moveWest();
                 break;
             case 'L':
