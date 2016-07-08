@@ -44,7 +44,7 @@ public class StartProgramView {
     public String getPlayerName() {
         
         boolean isValidName = false;
-        String name = "";
+        String name = " ";
         
         console.println("Please enter your name: ");
         
@@ -188,7 +188,7 @@ public class StartProgramView {
                 "\n";
       
         
-        console.println(welcome);
+        System.out.println(welcome);
     }
     
     public void displayWelcomeMessage(String playerName) {

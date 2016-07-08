@@ -9,7 +9,6 @@ import byui.cit260.jurassicpark.control.MovementController;
 import byui.cit260.jurassicpark.control.ProgramController;
 import byui.cit260.jurassicpark.exception.MovementException;
 import byui.cit260.jurassicpark.model.Location;
-import java.util.Scanner;
 import jurassicpark.JurassicPark;
 
 /**

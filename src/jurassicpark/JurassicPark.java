@@ -25,18 +25,42 @@ public class JurassicPark {
 
     private static BufferedReader inFile;
     private static PrintWriter outFile;
+    
+    private static PrintWriter logFile;
+
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        
+        StartProgramView startProgram = new StartProgramView();
+        try {
         inFile = new BufferedReader(new InputStreamReader(System.in));
         outFile = new PrintWriter(System.out, true);
-        StartProgramView startProgram = new StartProgramView();
+        String logPath = "log.txt";
+        logFile = new PrintWriter(logPath);
+        
         startProgram.startProgram();
+    } catch (Exception e) {
+        e.printStackTrace();
+        startProgram.startProgram();
+    } finally {
+            try {
+                if (inFile != null) {
+                    inFile.close();
+                }
+                if (outFile != null) {
+                    outFile.close();
+                }
+                if (logFile != null) {
+                    logFile.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error closing files");
+            }
+        }
     }
-
     public static Player getPlayer() {
         return player;
     }
@@ -61,10 +85,6 @@ public class JurassicPark {
         JurassicPark.location = location;
     }
 
-    public static PrintWriter getLogFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public static BufferedReader getInFile() {
         return inFile;
     }
@@ -81,4 +101,11 @@ public class JurassicPark {
         JurassicPark.outFile = outFile;
     }
 
+       public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        JurassicPark.logFile = logFile;
+    }
 }
