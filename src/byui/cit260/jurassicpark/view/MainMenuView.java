@@ -64,12 +64,25 @@ public class MainMenuView extends View {
     }
 
     private void loadSavedGame() {
-         LoadMenuView loadSavedGame = new LoadMenuView();
-         loadSavedGame.displayMenu();
+        console.println("Enter file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            ProgramController.loadGame(fileName);
+            GameMainView gmv = new GameMainView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error on inpiut");
+        }
     }
 
     private void saveCurrentGame() {
-         System.out.println("CALLED START NEW GAME - NIY");
+        console.println("Enter file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            ProgramController.saveGame(fileName);
+        } catch (Exception e){
+            ErrorView.display(this.getClass().getName(), "Error on input");
+        }
     }
     private void helpMenu() {
          HelpMenuView helpMenu = new HelpMenuView();

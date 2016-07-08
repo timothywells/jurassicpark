@@ -5,14 +5,15 @@
  */
 package byui.cit260.jurassicpark.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Matthew
  */
-public class Game {
+public class Game implements Serializable{
     
     private Player player;
-
     private Game game;
     
     private Map map;
@@ -42,6 +43,5 @@ public class Game {
     public void setPlayer(Player player) {
         this.player = player;
     }
-
     
 }
