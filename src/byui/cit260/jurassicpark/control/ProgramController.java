@@ -46,10 +46,10 @@ public class ProgramController {
     
     public static void saveGame(String filePath) {
         try {
-            FileOutputStream for = new FileOutputStream(filePath);
+            FileOutputStream fos = new FileOutputStream(filePath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             
-            oos.writeObject(Jurassicpark.getGame());
+            oos.writeObject(JurassicPark.getGame());
         } catch(Exception e) {
             ErrorView.display("ProgramController", e.getMessage());
             
@@ -60,7 +60,7 @@ public class ProgramController {
         Game game = null;
         
         try {
-            FileInputStream file = new FileInputStream(filePath);
+            FileInputStream fis = new FileInputStream(filePath);
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             game = (Game)ois.readObject();
