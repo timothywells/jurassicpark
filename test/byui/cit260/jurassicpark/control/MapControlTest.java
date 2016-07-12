@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.jurassicpark.control;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -25,7 +24,7 @@ public class MapControlTest {
         System.out.println("calcResistance");
         double volts = 110.0;
         double amps = 20.0;
-        PowerBreakerControl instance = new PowerBreakerControl();
+        Panel instance = new Panel();
         double expResult = 5.5;
         double result = instance.calcResistance(volts, amps);
         assertEquals(expResult, result, 0.0);
