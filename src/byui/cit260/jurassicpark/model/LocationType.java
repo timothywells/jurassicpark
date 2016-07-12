@@ -12,5 +12,9 @@ package byui.cit260.jurassicpark.model;
 public enum LocationType {
     
     Park,
+    TRex,
+    Velociraptors,
+    Breaker,
+
     
 }
