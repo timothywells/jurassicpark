@@ -12,36 +12,28 @@ import java.util.Scanner;
  *
  * @author Matthew
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
-    private final String menu = "\n"
+    public HelpMenuView(){
+        super("\n"
+            +"\n-------------------------"
+            +"\n|   Main Menu           |" 
+            +"\n-------------------------"        
             + "\nA - About Game"
             + "\nI - Instructions"
             + "\nP - Purpose of Game"
             + "\nD - Dinosaurs"
-            + "\nM - Main Menu"
-            ;
-    
-    public HelpMenuView(){
+            + "\nM - Main Menu");
+   
         
     }
-    
-    public void displayMenu(){
         
-        char selection = ' ';
+    @Override
+    public boolean doAction(String selection) {
         
-        do {
-            System.out.println(menu);
-            
-            String input = getInput();
-            selection = input.charAt(0);
-            
-        } while (selection != 'M');
-    }
-    
-    public void doAction(char selection) {
-        
-        switch(selection) {
+        char charSel = selection.toUpperCase().charAt(0);
+           
+        switch(charSel) {
             case 'A':
                 aboutGame();
                 break;
@@ -57,46 +49,27 @@ public class HelpMenuView {
             case 'M':
                 break;
             default:
-                System.out.println("Invalid Option");
+                console.println("Invalid Option");
                 break;
                 
         }
-   
-    }
-        
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String input = null;
-        boolean isValid = false;
-        
-        while(!isValid) {
-            System.out.println("Please select an option: ");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input == null || input.length() == 0) {
-                System.err.println("Invalid input - please enter a valid character");
-            } else {
-                isValid = true;
-            }
-        }
-        
-        return input.toUpperCase();
+        return false;
     }
 
     private void aboutGame() {
-        System.out.println("About stuff");
+        console.println("About stuff");
     }
 
     private void instructions() {
-        System.out.println("About stuff");
+        console.println("About stuff");
     }
 
     private void purposeOfGame() {
-        System.out.println("About stuff");
+        console.println("About stuff");
     }
 
     private void dinosaurs() {
-        System.out.println("About stuff");
+        console.println("About stuff");
     }
+
 }

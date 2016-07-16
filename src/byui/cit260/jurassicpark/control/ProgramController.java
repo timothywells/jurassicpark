@@ -41,7 +41,7 @@ public class ProgramController {
         Map gameMap = new Map();
         g.setMap(gameMap);
         
-        player.setLocation(gameMap.getLocation(19,0));
+        player.setLocation(gameMap.getLocation(9,0));
         
         JurassicPark.setGame(g);
     }
