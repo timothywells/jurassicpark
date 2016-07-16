@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.jurassicPark.view;
+package byui.cit260.jurassicpark.view;
 
 /**
  *
- * @author Matthew
+ * @author zerto
  */
-class playersName {
+public class BreakerBoxView {
     
 }

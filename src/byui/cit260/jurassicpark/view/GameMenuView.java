@@ -16,9 +16,9 @@ import jurassicpark.JurassicPark;
  * @author Tim W
  */
 
-public class GameMainView extends View {
+public class GameMenuView extends View {
 
-    public GameMainView(){
+    public GameMenuView(){
         super("\n"
             +"\n-------------------------"
             +"\n|   Game Menu           |" 

@@ -14,7 +14,9 @@ public enum LocationType {
     Park,
     TRex,
     Velociraptors,
-    Breaker,
+    BreakerBox,
+    VisitorCenter,
+    Helipad
 
     
 }
