@@ -89,9 +89,7 @@ public class MainMenuView extends View {
          helpMenu.display();
     }
 
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+   
 }
 
     
