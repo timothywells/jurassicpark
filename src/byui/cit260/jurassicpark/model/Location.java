@@ -5,7 +5,7 @@
  */
 package byui.cit260.jurassicpark.model;
 
-import byui.cit260.jurassicpark.control.Panel;
+import byui.cit260.jurassicpark.control.BreakerBoxController;
 import java.io.Serializable;
 
 /**
@@ -18,7 +18,7 @@ public class Location implements Serializable{
     private Player player;
     private Item item;
     private Dinosaur dinosaur; 
-    private Panel panel;
+    private BreakerBoxController panel;
     private int row;
     private int col;
     
@@ -72,11 +72,11 @@ public class Location implements Serializable{
         this.dinosaur = dinosaur;
     }
     
-    public Panel getPanel() {
+    public BreakerBoxController getPanel() {
         return panel;
     }
 
-    public void setPanel(Panel panel) {
+    public void setPanel(BreakerBoxController panel) {
         this.panel = panel;
     }
     

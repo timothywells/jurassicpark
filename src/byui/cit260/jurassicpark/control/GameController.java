@@ -11,7 +11,7 @@ import byui.cit260.jurassicpark.model.Player;
  *
  * @author Matthew
  */
-public class GameControl {
+public class GameController {
 
     public static Player createPlayer(String playersName) {
         System.out.println("\n*** createPlayer() function called ***");

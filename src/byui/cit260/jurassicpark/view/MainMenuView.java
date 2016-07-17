@@ -58,7 +58,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         ProgramController.createNewGame(JurassicPark.getPlayer());
-        GameMainView startNewGame = new GameMainView();
+        GameMenuView startNewGame = new GameMenuView();
         startNewGame.display();
         
     }
@@ -68,7 +68,7 @@ public class MainMenuView extends View {
         try {
             String fileName = keyboard.readLine();
             ProgramController.loadGame(fileName);
-            GameMainView gmv = new GameMainView();
+            GameMenuView gmv = new GameMenuView();
             gmv.display();
         } catch (Exception e) {
             ErrorView.display(this.getClass().getName(), "Error on inpiut");
