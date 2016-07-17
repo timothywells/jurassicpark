@@ -17,23 +17,22 @@ public class HelpMenuView extends View{
     public HelpMenuView(){
         super("\n"
             +"\n-------------------------"
-            +"\n|   Main Menu           |" 
+            +"\n|   Help Menu           |" 
             +"\n-------------------------"        
             + "\nA - About Game"
             + "\nI - Instructions"
             + "\nP - Purpose of Game"
             + "\nD - Dinosaurs"
-            + "\nM - Main Menu");
-   
-        
+            + "\nQ - Main Menu"
+            + "\n         ");
     }
         
-    @Override
-    public boolean doAction(String selection) {
+    
+    public boolean doAction(String input) {
         
-        char charSel = selection.toUpperCase().charAt(0);
+        char selection = input.toUpperCase().charAt(0);
            
-        switch(charSel) {
+        switch(selection) {
             case 'A':
                 aboutGame();
                 break;
@@ -46,7 +45,7 @@ public class HelpMenuView extends View{
             case 'D':
                 dinosaurs();
                 break;
-            case 'M':
+            case 'Q':
                 break;
             default:
                 console.println("Invalid Option");

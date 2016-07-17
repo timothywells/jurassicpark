@@ -27,7 +27,7 @@ public class InventoryControlTest {
         double cloth = 2.0;
         double stick = 5.0;
         double fuel = 10.0;
-        InventoryControl instance = new InventoryControl();
+        InventoryController instance = new InventoryController();
         double expResult = 0;
         double result = instance.calcTorchNeeded(lighter, cloth, stick, fuel);
         assertEquals(expResult, result, 0.01);
