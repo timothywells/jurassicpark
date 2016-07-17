@@ -46,7 +46,10 @@ public class Map implements Serializable {
         for (int row = 0; row < NUM_ROWS; row++){
             for (int col = 0; col < NUM_COLS; col++) {
                     rtn += matrix[row][col].getType().name().charAt(0);    
-            
+                    
+                    if(matrix[row][col].getDinosaur() != null) {
+                    rtn += matrix[row][col].getDinosaur().getName().charAt(0);
+                }
                     rtn += "\t";
             }
                 rtn += "\n";

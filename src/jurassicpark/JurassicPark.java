@@ -79,14 +79,6 @@ public class JurassicPark {
         JurassicPark.game = game;
     }
 
-    public static Location getLocation() {
-        return location;
-    }
-
-    public static void setLocation(Location location) {
-        JurassicPark.location = location;
-    }
-
     public static BufferedReader getInFile() {
         return inFile;
     }

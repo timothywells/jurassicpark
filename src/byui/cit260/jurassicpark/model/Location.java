@@ -19,6 +19,7 @@ public class Location implements Serializable{
     private Item item;
     private Dinosaur dinosaur; 
     private BreakerBoxController panel;
+    private Helipad helipad;
     private int row;
     private int col;
     

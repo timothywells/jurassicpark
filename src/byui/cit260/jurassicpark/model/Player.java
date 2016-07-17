@@ -6,6 +6,8 @@
 package byui.cit260.jurassicpark.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,11 +17,17 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
+    List<Item> inventory;
     Location location;
     
-    public Player(){
-    
+    public Player() {
+        inventory = new ArrayList<>();
     }
+    
+    public void addItem(Item i) {
+        inventory.add(i);
+    }
+    
 
     public String getName() {
         return name;
@@ -27,6 +35,14 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
 
     @Override

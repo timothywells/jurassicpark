@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import jurassicpark.JurassicPark;
 
@@ -41,23 +42,61 @@ public class ProgramController {
         Map gameMap = new Map();
         g.setMap(gameMap);
         
+        emplaceRandomDinosaur(gameMap);
+        
         player.setLocation(gameMap.getLocation(9,0));
         
         JurassicPark.setGame(g);
     }
-    
-   private static void createDinosaur(Dinosaur dinosaur) {
+    public static void emplaceRandomDinosaur(Map map) {
         
-        Game g = new Game();
-        g.setDinosaur(dinosaur);
+        List<Dinosaur> dinosaurs = createDinosaurLocation();
+        boolean success = false;
         
-        Map gameMap = new Map();
-        g.setMap(gameMap);
+        for(Dinosaur d : dinosaurs) {
+            
+            do {
+                int row = (int)(Math.random() * Map.NUM_ROWS);
+                int col = (int)(Math.random() * Map.NUM_COLS);
+            
+                 success = false;
+                
+                if(map.getLocation(row, col).getDinosaur() == null) {
+                    map.getLocation(row, col).setDinosaur(d);
+                    success = true;
+                }
+                
+            } while(success == false);
+            
+        }
         
-        dinosaur.setLocation(gameMap.getLocation(5,5));
+    }
+   public static List<Dinosaur> createDinosaurLocation() {
         
-        JurassicPark.setGame(g);
-   }
+        List<Dinosaur> dinosaurList = new ArrayList<>();
+        
+        Dinosaur raptor1 = new Dinosaur();
+        raptor1.setName("Raptor");
+        dinosaurList.add(raptor1);
+        
+        Dinosaur raptor2 = new Dinosaur();
+        raptor2.setName("Raptor");
+        dinosaurList.add(raptor2);
+        
+        Dinosaur raptor3 = new Dinosaur();
+        raptor3.setName("Raptor");
+        dinosaurList.add(raptor3);
+        
+        Dinosaur raptor4 = new Dinosaur();
+        raptor4.setName("Raptor");
+        dinosaurList.add(raptor4);
+        
+        Dinosaur trex = new Dinosaur();
+        trex.setName("T-Rex");
+        dinosaurList.add(trex);
+        
+        return dinosaurList;
+    }
     public static void saveGame(String filePath) {
         try {
             FileOutputStream fos = new FileOutputStream(filePath);

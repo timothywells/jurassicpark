@@ -11,31 +11,14 @@ import java.io.Serializable;
  *
  * @author Matthew
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
     
     private Player player;
-    private Game game;
-    
     private Map map;
 
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
+    public Game() {
     }
     
-    
-
     public Player getPlayer() {
         return player;
     }
@@ -44,8 +27,14 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    public void setDinosaur(Dinosaur dinosaur) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map getMap() {
+        return map;
     }
-    
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+      
 }
+    
+    

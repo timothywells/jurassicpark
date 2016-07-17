@@ -9,7 +9,6 @@ package byui.cit260.jurassicpark.model;
  *
  * @author Matthew
  */
-public enum LocationType {
+class Helipad {
     
-    Park,
 }
