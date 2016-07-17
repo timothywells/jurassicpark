@@ -19,11 +19,11 @@ public class HelpMenuView extends View{
             +"\n-------------------------"
             +"\n|   Help Menu           |" 
             +"\n-------------------------"        
-            + "\nA - About Game"
+            + "\nS - Story"
             + "\nI - Instructions"
             + "\nP - Purpose of Game"
             + "\nD - Dinosaurs"
-            + "\nQ - Main Menu"
+            + "\nM - Main Menu"
             + "\n         ");
     }
         
@@ -33,19 +33,19 @@ public class HelpMenuView extends View{
         char selection = input.toUpperCase().charAt(0);
            
         switch(selection) {
-            case 'A':
-                aboutGame();
+            case 'S':
+                Story();
                 break;
             case 'I':
-                instructions();
+                Instructions();
                 break;
             case 'P':
                 purposeOfGame();
                 break;
             case 'D':
-                dinosaurs();
+                Dinosaurs();
                 break;
-            case 'Q':
+            case 'M':
                 break;
             default:
                 console.println("Invalid Option");
@@ -55,11 +55,11 @@ public class HelpMenuView extends View{
         return false;
     }
 
-    private void aboutGame() {
+    private void Story() {
         console.println("About stuff");
     }
 
-    private void instructions() {
+    private void Instructions() {
         console.println("About stuff");
     }
 
@@ -67,7 +67,7 @@ public class HelpMenuView extends View{
         console.println("About stuff");
     }
 
-    private void dinosaurs() {
+    private void Dinosaurs() {
         console.println("About stuff");
     }
 

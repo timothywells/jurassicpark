@@ -24,7 +24,7 @@ public class MapControlTest {
         System.out.println("calcResistance");
         double volts = 110.0;
         double amps = 20.0;
-        Panel instance = new Panel();
+        BreakerBoxController instance = new BreakerBoxController();
         double expResult = 5.5;
         double result = instance.calcResistance(volts, amps);
         assertEquals(expResult, result, 0.0);
