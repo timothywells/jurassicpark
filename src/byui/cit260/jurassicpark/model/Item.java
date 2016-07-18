@@ -5,10 +5,12 @@
  */
 package byui.cit260.jurassicpark.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author christian
  */
-public class Item {
+public class Item implements Serializable {
     
 }
