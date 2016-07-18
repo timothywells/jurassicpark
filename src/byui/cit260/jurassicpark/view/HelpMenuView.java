@@ -5,12 +5,9 @@
  */
 package byui.cit260.jurassicpark.view;
 
-import byui.cit260.jurassicpark.control.ProgramController;
-import java.util.Scanner;
-
 /**
  *
- * @author Matthew
+ * @author christian
  */
 public class HelpMenuView extends View{
     
@@ -56,7 +53,12 @@ public class HelpMenuView extends View{
     }
 
     private void Story() {
-        console.println("About stuff");
+        console.println("\nRace to escape their jaws and claws! Dinosaurs live again at Jurassic Park,"
+                + "\nthat has real dinosaurs roaming the earth!"
+                + "\nYour tour ride's stopped in the middle of the park. Something's gone wrong! "
+                + "\nThe dinosaurs aren't in their pens and they're hungry..for you!"
+                + "\nRace across the island gameboard to reach the Visiter Center first. "
+                + "\nBut watch out for the T-Rex, and the raptors!");
     }
 
     private void Instructions() {
