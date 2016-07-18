@@ -10,5 +10,7 @@ package byui.cit260.jurassicpark.model;
  * @author Tim
  */
 public class BreakerBox {
+
+    
     
 }

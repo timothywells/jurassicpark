@@ -9,6 +9,27 @@ package byui.cit260.jurassicpark.exception;
  *
  * @author Tim
  */
-public class WinGameException {
+public class WinGameException extends RuntimeException{
+
+    public WinGameException() {
+    }
+
+    public WinGameException(String message) {
+        super(message);
+    }
+
+    public WinGameException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public WinGameException(Throwable cause) {
+        super(cause);
+    }
+
+    public WinGameException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+    
+    
     
 }
