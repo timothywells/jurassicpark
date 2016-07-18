@@ -10,13 +10,13 @@ package byui.cit260.jurassicpark.control;
  * @author Matthew
  */
 public class BreakerBoxController {
-    public double calcResistance (double voltage, double amps){
+    public double calcResistance (double volts, double amps){
         
-         if ((voltage < 110 || voltage > 110) && (amps < 20 || amps > 20)){
+         if ((volts < 110 || volts > 110) && (amps < 20 || amps > 20)){
             return 0;
          }
          
-         double resistance = voltage / amps;
+         double resistance = volts / amps;
          return resistance;
         
     }
